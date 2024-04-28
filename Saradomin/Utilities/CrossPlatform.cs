@@ -201,9 +201,7 @@ namespace Saradomin.Utilities
                     Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
                     "2009scape"
                 );
-                if (Directory.Exists(userProfile))
-                    Directory.Move(userProfile, appData);
-                return appData;
+                return Directory.Exists(userProfile) ? userProfile : appData;
             }
         }
 
